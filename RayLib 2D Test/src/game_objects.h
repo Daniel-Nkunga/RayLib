@@ -16,7 +16,7 @@ enum ObjectType
 class GameObject
 {
 public:
-int objectType;
+    int objectType;
     float x, y;
     int width, height;
 

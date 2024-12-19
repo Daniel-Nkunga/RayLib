@@ -8,7 +8,7 @@
 //     GROUND = 2
 // };
 
-float GRAVITY = 0.50;
-float TERMINAL_VELOCITY = 10.0;
+float GRAVITY = 2.50; // CHANGED: 0.5
+float TERMINAL_VELOCITY = 20.0; // CHANGED: 10
 
 #endif

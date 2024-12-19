@@ -4,15 +4,26 @@
 // Includes
 #include <iostream>
 #include <raylib.h>
+#include <vector>
 using namespace std;
 
-int uniqueID = 0;
+extern int uniqueIDIndex;
 
 class GameObject
 {
 public:
     int ObjectType;
+    int uniqueID;
     float x, y;
+
+    // Default Constructor
+    GameObject(int init_Object_Type, float init_x, float init_y)
+    {
+        ObjectType = init_Object_Type;
+        uniqueID = getUniqueID(ObjectType);
+        x = init_x;
+        y = init_y;
+    }
 
     // Functions
     /* Get Unique ID

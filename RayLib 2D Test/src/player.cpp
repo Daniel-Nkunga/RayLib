@@ -26,18 +26,18 @@ void Player::Update(const vector<GameObject*>& objects)
         }
     }
 
-    if(IsKeyPressed(KEY_SPACE))
-        {
-            if(lastHeading == RIGHT)
-            {
-                speed_x += 15;
-                // speed_x = 0;
-            } else
-            {
-                speed_x -= 15;
-                // speed_x = 0;
-            }
-        }
+    // if(IsKeyPressed(KEY_SPACE))
+    //     {
+    //         if(lastHeading == RIGHT)
+    //         {
+    //             speed_x += 15;
+    //             // speed_x = 0;
+    //         } else
+    //         {
+    //             speed_x -= 15;
+    //             // speed_x = 0;
+    //         }
+    //     }
 
     // Decelerate when no movement key is pressed
     if (speed_x > 0)
@@ -65,7 +65,7 @@ void Player::Update(const vector<GameObject*>& objects)
 
     if((IsKeyDown(KEY_W) || IsKeyDown(KEY_UP)) && IsGrounded(objects))
     {
-        speed_y -= 10;
+        speed_y -= 100; // CHANGED: 10
     }
 }
 
