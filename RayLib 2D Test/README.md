@@ -20,4 +20,4 @@ Notes:
 
 Demo: A simple platforming challenge! Try to reach the purple platform
 
-![Demo](C:\Users\danie\Desktop\RayLib\RayLib 2D Test\2D_Test_Demo.jpg)
+![Demo](2D_Test_Demo.jpg)
