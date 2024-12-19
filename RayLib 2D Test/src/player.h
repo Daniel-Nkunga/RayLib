@@ -7,10 +7,17 @@
 #include "game_objects.h"
 using namespace std;
 
+enum LastHeading
+{
+    LEFT = 0,
+    RIGHT = 1
+};
+
 class Player : public GameObject
 {
 public:
     float speed_x, speed_y;
+    int lastHeading = RIGHT;
 
     // Default Constructor
     Player(float init_x = 0, float init_y = 25, int init_width = 50, int init_height = 50, float init_speed_x = 0, float init_speed_y = 0)

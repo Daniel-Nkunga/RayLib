@@ -7,9 +7,10 @@ using namespace std;
 
 enum ObjectType 
 {
-    DEFAULT = 0,
-    PLAYER = 1,
-    GROUND = 2
+    DEFAULT = 000,
+    PLAYER = 001,
+    GROUND = 201,
+    WALL = 202
 };
 
 class GameObject

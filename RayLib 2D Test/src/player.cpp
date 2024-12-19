@@ -11,11 +11,14 @@ void Player::Update(const vector<GameObject*>& objects)
     {
         if ((IsKeyDown(KEY_A) || IsKeyDown(KEY_LEFT)) && !(IsKeyDown(KEY_D) || IsKeyDown(KEY_RIGHT)))
         {
-            speed_x -= 1; // Move left
+            speed_x -= 1; // Move left4
+            lastHeading = LEFT;
+            
         }
         if ((IsKeyDown(KEY_D) || IsKeyDown(KEY_RIGHT)) && !(IsKeyDown(KEY_A) || IsKeyDown(KEY_LEFT)))
         {
             speed_x += 1; // Move right
+            lastHeading = RIGHT;
         }
         if ((IsKeyDown(KEY_D) || IsKeyDown(KEY_RIGHT)) && (IsKeyDown(KEY_A) || IsKeyDown(KEY_LEFT)))
         {
@@ -23,11 +26,24 @@ void Player::Update(const vector<GameObject*>& objects)
         }
     }
 
+    if(IsKeyPressed(KEY_SPACE))
+        {
+            if(lastHeading == RIGHT)
+            {
+                speed_x += 15;
+                // speed_x = 0;
+            } else
+            {
+                speed_x -= 15;
+                // speed_x = 0;
+            }
+        }
+
     // Decelerate when no movement key is pressed
     if (speed_x > 0)
-        speed_x -= 0.25; // Slow down to the right
+        speed_x -= 0.5; // Slow down to the right
     else if(speed_x < 0)
-        speed_x += 0.25; // Slow down to the left    
+        speed_x += 0.5; // Slow down to the left    
 
     // Check if grounded
     GameObject* ground = GetObjectBelow(objects);
@@ -38,7 +54,13 @@ void Player::Update(const vector<GameObject*>& objects)
     }
     else
     {
-        speed_y += GRAVITY; // Apply gravity
+        if(speed_y < TERMINAL_VELOCITY)
+        {
+            speed_y += GRAVITY; // Apply gravity
+        } else
+        {
+            speed_y = TERMINAL_VELOCITY;
+        }
     }
 
     if((IsKeyDown(KEY_W) || IsKeyDown(KEY_UP)) && IsGrounded(objects))
@@ -63,7 +85,7 @@ GameObject* Player::GetObjectBelow(const vector<GameObject*>& objects)
     {
         // Check for horizontal overlap and if the object is directly below the player
         if (x < obj->x + obj->width && x + width > obj->x && // Horizontal overlap
-            y + height >= obj->y && y + height <= obj->y + 2.5) // Vertical alignment with tolerance
+            y + height >= obj->y && y + height <= obj->y + (.5 * TERMINAL_VELOCITY)) // Vertical alignment with tolerance
         {
             return obj; // Return the object below the player
         }

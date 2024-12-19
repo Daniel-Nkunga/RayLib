@@ -14,4 +14,10 @@ Notes:
         - Vector of Objects 
             - Amittedtly, this solution partially came from ChatGPT (which I had been avoiding for this project) with the goal of determing what object was directly under my character; it solution created the game_objects.h file and extended the player class from it; then it used pointers to determine what was the object at that position
             - I changed from pointers to enumerators to help with my own readability
-            - TODO: create multiple vectors so the "object" vector doesn't become bloated with every single object in the game (ex: "ground" vector for all objects that the player can stand on)
+            - TODO: create multiple vectors so the "objects" vector doesn't become bloated with every single object in the game (ex: "ground" vector for all objects that the player can stand on)
+    - Walls
+        - They'd be nice; I "implemented" the enum  but realized I'd have to code new collision logic and didn't want to deal with it at the moment
+
+Demo: A simple platforming challenge! Try to reach the purple platform
+
+![Demo](C:\Users\danie\Desktop\RayLib\RayLib 2D Test\2D_Test_Demo.jpg)
