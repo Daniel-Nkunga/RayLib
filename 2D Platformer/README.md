@@ -14,4 +14,3 @@ Running TO-DO list:
 - Create documentation for GameObject Class
 - Create documentation for Ground Class
 - Create Collision Box Class
-- Restructure Ground Class; Game Object > Collision Box > Ground 

@@ -20,7 +20,7 @@ public:
     GameObject(int init_Object_Type, float init_x, float init_y)
     {
         ObjectType = init_Object_Type;
-        uniqueID = getUniqueID(ObjectType);
+        // uniqueID = getUniqueID(ObjectType);
         x = init_x;
         y = init_y;
     }

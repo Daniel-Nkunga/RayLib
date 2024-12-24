@@ -7,6 +7,9 @@
 #include <vector>
 using namespace std;
 
+const float TERMINAL_VELOCITY = 10.0;
+const float GRAVITY = 2.25;
+
 enum ObjectTypes
 {
     DEFAULT = 000,
