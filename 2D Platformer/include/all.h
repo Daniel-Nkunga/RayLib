@@ -7,5 +7,6 @@
 #include "game_objects.h"
 #include "ground.h"
 #include "platform.h"
+#include "player.h"
 
 #endif // INCLUDE_ALL_H

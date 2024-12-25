@@ -22,7 +22,7 @@ int main()
     ground_objects.push_back(Ground(screen_width / 4 * 2, (screen_height / 8) * 6, screen_width / 8, 15));
     ground_objects.push_back(Ground(screen_width / 4 * 3, (screen_height / 8) * 5, screen_width / 8, 15));
     platform_objects.push_back(Platform(screen_width / 4 * 3, (screen_height / 8) * 7, screen_width / 8, 15));
-    // Platform platform = {screen_width / 4 * 3, (screen_height / 8) * 7, screen_width / 8, 15};
+    Player player;
 
     cout << "Hello, World" << endl;
 
@@ -33,6 +33,7 @@ int main()
         ClearBackground(BLACK);
 
         // Update
+        player.Update();
 
         // Drawing
         for(int i = 0; i < static_cast<int>(ground_objects.size()); i++)
@@ -43,6 +44,7 @@ int main()
         {
             platform_objects[i].Draw();
         }
+        player.Draw();
 
         EndDrawing();
     }
