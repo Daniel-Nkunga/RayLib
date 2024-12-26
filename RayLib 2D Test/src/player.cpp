@@ -65,8 +65,15 @@ void Player::Update(const vector<GameObject*>& objects)
 
     if((IsKeyDown(KEY_W) || IsKeyDown(KEY_UP)) && IsGrounded(objects))
     {
-        speed_y -= 100; // CHANGED: 10
+        speed_y -= 10; // CHANGED: 10
     }
+
+    if(y > 3000)
+    {
+        x = 0;
+        y = 0;
+    }
+        
 }
 
 bool Player::IsGrounded(const vector<GameObject*>& objects)
