@@ -3,9 +3,10 @@
 
 void Player::Update()
 {
-    float speed_x, speed_y;
+    // float speed_x, speed_y = 0;
     x += speed_x;
     y += speed_y;
+    
     
     if(IsMouseButtonDown(KEY_A))
     {
