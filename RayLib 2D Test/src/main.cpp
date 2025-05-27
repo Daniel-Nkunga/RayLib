@@ -12,7 +12,7 @@ int main()
     const int screen_width = 1280;
     const int screen_height = 800;
     InitWindow(screen_width, screen_height, "2D Test!");
-    ToggleFullscreen(); // TOGGLE ME!!!
+    // ToggleFullscreen(); // TOGGLE ME!!!
 
     // Scene Variables
     Player player(75, screen_height - 65); // Initialize player near the ground
